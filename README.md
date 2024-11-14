@@ -64,12 +64,12 @@ python openai-api.py <入力ファイル> [履歴ファイル]
    ```bash
    python openai-api.py input.txt chat_history.pickle
    ```
-   このコマンドは `input.txt` の内容をGPTモデルに送信し、AIの応答を `output.txt` に保存します。`chat_history.pickle` が存在する場合は、以前の状態から対話を継続し、存在しない場合は新規に `.pickle` ファイルが作成されます。
+   このコマンドは `input.txt` の内容をGPTモデルに送信し、AIの応答を `output-[project name].txt` に保存します。`chat_history.pickle` が存在する場合は、以前の状態から対話を継続し、存在しない場合は新規に `.pickle` ファイルが作成されます。
 
 ### 出力
 
-GPTモデルからの応答は `output.txt` にセパレーター付きで追記されます。会話履歴は指定された `.pickle` ファイルにシリアライズされ、継続した対話が可能です。
+GPTモデルからの応答は `output-[project name].txt` にセパレーター付きで追記されます。会話履歴は指定された `.pickle` ファイルにシリアライズされ、継続した対話が可能です。
 
 ## エラーハンドリング
 
-API呼び出し中にエラーが発生した場合、エラーメッセージがコンソールに表示されるとともに、`output.txt` にも保存されます。
+API呼び出し中にエラーが発生した場合、エラーメッセージがコンソールに表示されるとともに、`output-[project name].txt` にも保存されます。
