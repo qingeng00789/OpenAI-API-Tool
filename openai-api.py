@@ -19,8 +19,8 @@ def query_gpt_chat(model, filename_input, history_file=None):
         history_file = f"{project_name}.pickle"
         messages = [{"role": "system", "content": "システム開発サポート"}]
 
-    # filename_output = f"output-{project_name}.txt"
-    filename_output = f"output.txt"
+    filename_output = f"output-{project_name}.txt"
+    # filename_output = f"output.txt"
 
     # inputファイルからユーザーの入力を読み込みます。
     with open(filename_input, 'r', encoding='utf-8') as file:
@@ -62,5 +62,3 @@ history_file = sys.argv[2] if len(sys.argv) > 2 else None
 
 # チャットクエリを実行し、結果をファイルに保存します。
 query_gpt_chat("gpt-4o", filename_input, history_file)
-# query_gpt_chat("gpt-4", filename_input, history_file)
-# query_gpt_chat("gpt-4-1106-preview", filename_input, history_file)
